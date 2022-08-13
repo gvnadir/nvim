@@ -9,5 +9,6 @@ require "user.treesitter"
 require "user.autopairs"
 require "user.comment"
 require "user.gitsigns"
+require "user.nvim-tree"
 -- vim.cmd [[set nonumber]]
 vim.cmd [[colorscheme challenger_deep]]
