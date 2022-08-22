@@ -13,5 +13,6 @@ require "user.nvim-tree"
 require "user.bufferline"
 require "user.lualine"
 require "user.toggleterm"
+--[[ require "user.neosolarized" ]]
 -- vim.cmd [[set nonumber]]
--- vim.cmd [[colorscheme challenger_deep]]
+-- vim.cmd [[colorscheme neosolarized]]
