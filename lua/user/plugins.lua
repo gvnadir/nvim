@@ -68,6 +68,10 @@ return packer.startup(function(use)
   use 'bluz71/vim-moonfly-colors'
   use 'shatur/neovim-ayu'
   use 'rafi/awesome-vim-colorschemes'
+  use {
+        'svrana/neosolarized.nvim',
+        requires = { 'tjdevries/colorbuddy.nvim' }
+      }
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -99,13 +103,10 @@ return packer.startup(function(use)
   
   -- Git
   use "lewis6991/gitsigns.nvim"
-
-  use {
-        'svrana/neosolarized.nvim',
-        requires = { 'tjdevries/colorbuddy.nvim' }
-      }
-
-  use 'norcalli/nvim-colorizer.lua'
+  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+  
+  -- others
+  use 'norcalli/nvim-colorizer.lua' -- css colorized hash
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
