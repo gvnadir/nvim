@@ -85,6 +85,8 @@ local function lsp_keymaps(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
+  --[[ It prevents neovim to ask which language server to use for fomatting the typescript document.
+  --The choose would be between tsserver and null-ls and the way below I'm disabling tsserver. ]]
   if client.name == "tsserver" then
     client.resolved_capabilities.document_formatting = false
   end
