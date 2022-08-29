@@ -70,7 +70,7 @@ keymap("n", "<leader>g", "<cmd>lua require'telescope.builtin'.live_grep()<cr>", 
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
 -- Nvimtree
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+--[[ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts) ]]
 --
 -- Fix
 keymap("n", "<ESC>", ":noh<cr>", opts)

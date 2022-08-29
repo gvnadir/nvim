@@ -50,12 +50,12 @@ return packer.startup(function(use)
   use "akinsho/toggleterm.nvim"
 
   -- Nvim-tree
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icons
-    },
-  }
+  -- use {
+  --   'kyazdani42/nvim-tree.lua',
+  --   requires = {
+  --     'kyazdani42/nvim-web-devicons', -- optional, for file icons
+  --   },
+  --  }
 
   -- Bufferline
   use "akinsho/bufferline.nvim"
@@ -93,6 +93,7 @@ return packer.startup(function(use)
   -- Telescope
   use "nvim-telescope/telescope.nvim"
   use 'nvim-telescope/telescope-media-files.nvim'
+  use { "nvim-telescope/telescope-file-browser.nvim" }
 
   -- Treesitter
   use {
@@ -107,6 +108,7 @@ return packer.startup(function(use)
   
   -- others
   use 'norcalli/nvim-colorizer.lua' -- css colorized hash
+  use 'kyazdani42/nvim-web-devicons' -- add file icons
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
