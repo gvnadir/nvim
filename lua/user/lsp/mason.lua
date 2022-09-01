@@ -10,8 +10,8 @@ if not status_ok_1 then
 end
 
 local servers = {
-  "cssmodules_ls",
-  "tsserver"
+  "tsserver",
+  "cssls"
 }
 
 local settings = {
