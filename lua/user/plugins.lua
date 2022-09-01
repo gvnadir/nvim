@@ -49,14 +49,6 @@ return packer.startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use "akinsho/toggleterm.nvim"
 
-  -- Nvim-tree
-  -- use {
-  --   'kyazdani42/nvim-tree.lua',
-  --   requires = {
-  --     'kyazdani42/nvim-web-devicons', -- optional, for file icons
-  --   },
-  --  }
-
   -- Bufferline
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
@@ -87,8 +79,9 @@ return packer.startup(function(use)
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use { "williamboman/mason.nvim" }
+  use "williamboman/mason-lspconfig.nvim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
