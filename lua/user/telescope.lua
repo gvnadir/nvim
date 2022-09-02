@@ -15,11 +15,6 @@ end
 
 telescope.setup {
   defaults = {
-    layout_strategy = "flex",
-    prompt_prefix = " ",
-    selection_caret = " ",
-    path_display = { "smart" },
-
     mappings = {
       i = {
         ["<C-n>"] = actions.cycle_history_next,
@@ -134,6 +129,5 @@ vim.keymap.set("n", "<space>e", function()
     grouped = true,
     previewer = false,
     initial_mode = "normal",
-    layout_config = { height = 40 }
   })
 end)
