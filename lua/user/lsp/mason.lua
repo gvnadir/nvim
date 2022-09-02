@@ -10,6 +10,7 @@ if not status_ok_1 then
 end
 
 local servers = {
+  "html",
   "tsserver",
   "cssls"
 }

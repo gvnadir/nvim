@@ -15,4 +15,5 @@ require "user.lualine"
 require "user.toggleterm"
 require "user.colorizer"
 require "user.neosolarized"
+require "user.indent-blankline"
 -- vim.cmd [[set nonumber]]
