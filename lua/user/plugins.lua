@@ -102,7 +102,7 @@ return packer.startup(function(use)
   -- others
   use 'norcalli/nvim-colorizer.lua' -- css colorized hash
   use 'kyazdani42/nvim-web-devicons' -- add file icons
-  use "lukas-reineke/indent-blankline.nvim"
+  -- use "lukas-reineke/indent-blankline.nvim" -- indent guides
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

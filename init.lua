@@ -15,5 +15,17 @@ require "user.lualine"
 require "user.toggleterm"
 require "user.colorizer"
 require "user.neosolarized"
-require "user.indent-blankline"
--- vim.cmd [[set nonumber]]
+-- require "user.indent-blankline"
+
+local has = function(x)
+  return vim.fn.has(x) == 1
+end
+local is_mac = has "macunix"
+local is_win = has "win32"
+
+if is_mac then
+  require('user.macos')
+end
+if is_win then
+  require('user.windows')
+end
