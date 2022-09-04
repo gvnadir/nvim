@@ -12,7 +12,8 @@ end
 local servers = {
   "html",
   "tsserver",
-  "cssls"
+  "cssls",
+  "sumneko_lua"
 }
 
 local settings = {
