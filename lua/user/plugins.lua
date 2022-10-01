@@ -64,6 +64,7 @@ return packer.startup(function(use)
         'svrana/neosolarized.nvim',
         requires = { 'tjdevries/colorbuddy.nvim' }
       }
+  use { "ellisonleao/gruvbox.nvim" }
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin

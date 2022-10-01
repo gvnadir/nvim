@@ -14,8 +14,11 @@ require "user.bufferline"
 require "user.lualine"
 require "user.toggleterm"
 require "user.colorizer"
-require "user.neosolarized"
+-- require "user.neosolarized"
 -- require "user.indent-blankline"
+
+vim.o.background = "dark" 
+vim.cmd([[colorscheme gruvbox]])
 
 local has = function(x)
   return vim.fn.has(x) == 1
