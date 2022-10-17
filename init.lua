@@ -19,7 +19,7 @@ require "user.colorizer"
 -- require "user.indent-blankline"
 
 -- vim.o.background = "dark" 
-vim.cmd([[colorscheme moonfly]])
+vim.cmd([[colorscheme neg]])
 
 local has = function(x)
   return vim.fn.has(x) == 1

@@ -65,6 +65,7 @@ return packer.startup(function(use)
         requires = { 'tjdevries/colorbuddy.nvim' }
       }
   use { "ellisonleao/gruvbox.nvim" }
+  use 'neg-serg/neg.nvim'
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
