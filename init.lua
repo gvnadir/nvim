@@ -15,11 +15,11 @@ require "user.lualine"
 require "user.toggleterm"
 require "user.colorizer"
 -- require "user.nvim-transparent"
- require "user.neosolarized"
+require "user.neosolarized"
 -- require "user.indent-blankline"
 
 -- vim.o.background = "dark" 
-vim.cmd([[colorscheme neg]])
+-- vim.cmd([[colorscheme neg]])
 
 local has = function(x)
   return vim.fn.has(x) == 1
