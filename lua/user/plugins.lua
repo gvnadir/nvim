@@ -66,6 +66,10 @@ return packer.startup(function(use)
       }
   use { "ellisonleao/gruvbox.nvim" }
   use 'neg-serg/neg.nvim'
+  use 'bratpeki/truedark-vim'
+  use 'NLKNguyen/papercolor-theme'
+  use 'fcpg/vim-farout'
+  use 'Evalir/dosbox-vim-colorscheme'
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
