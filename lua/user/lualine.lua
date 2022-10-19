@@ -4,9 +4,9 @@ if (not status) then return end
 lualine.setup {
   options = {
     icons_enabled = true,
-     theme = 'ayu_dark',
+    -- theme = 'ayu_dark',
     -- theme = 'molokai',
-    -- theme = 'papercolor_dark',
+    theme = 'papercolor_dark',
     section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
     disabled_filetypes = {}
