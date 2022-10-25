@@ -18,8 +18,8 @@ require "user.colorizer"
 require "user.neosolarized"
 -- require "user.indent-blankline"
 
-vim.o.background = "dark"
-vim.cmd([[colorscheme dosbox-black]])
+-- vim.o.background = "dark"
+-- vim.cmd([[colorscheme dosbox-black]])
 
 local has = function(x)
   return vim.fn.has(x) == 1
