@@ -70,6 +70,7 @@ return packer.startup(function(use)
   use 'NLKNguyen/papercolor-theme'
   use 'fcpg/vim-farout'
   use 'Evalir/dosbox-vim-colorscheme'
+  use 'ldelossa/vimdark'
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -97,7 +98,7 @@ return packer.startup(function(use)
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate"
+    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
   }
   use 'JoosepAlviste/nvim-ts-context-commentstring' -- comment for ts files
   
