@@ -10,7 +10,7 @@ require "user.autopairs"
 require "user.comment"
 require "user.gitsigns"
 require "user.nvim-tree"
--- require "user.bufferline"
+require "user.bufferline"
 require "user.lualine"
 require "user.toggleterm"
 require "user.colorizer"
@@ -20,7 +20,7 @@ require "user.neosolarized"
 
 vim.o.background = "dark"
 -- vim.cmd([[colorscheme vimdark]])
-vim.cmd([[colorscheme dosbox-black]])
+-- vim.cmd([[colorscheme dosbox-black]])
 
 local has = function(x)
   return vim.fn.has(x) == 1
