@@ -71,6 +71,7 @@ return packer.startup(function(use)
   use 'fcpg/vim-farout'
   use 'Evalir/dosbox-vim-colorscheme'
   use 'ldelossa/vimdark'
+  use 't184256/vim-boring'
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
