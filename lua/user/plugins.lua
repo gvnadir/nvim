@@ -61,9 +61,9 @@ return packer.startup(function(use)
   use 'shatur/neovim-ayu'
   use 'rafi/awesome-vim-colorschemes'
   use {
-        'svrana/neosolarized.nvim',
-        requires = { 'tjdevries/colorbuddy.nvim' }
-      }
+    'svrana/neosolarized.nvim',
+    requires = { 'tjdevries/colorbuddy.nvim' }
+  }
   use { "ellisonleao/gruvbox.nvim" }
   use 'neg-serg/neg.nvim'
   use 'bratpeki/truedark-vim'
@@ -97,15 +97,16 @@ return packer.startup(function(use)
 
   -- Treesitter
   use {
-    "nvim-treesitter/nvim-treesitter",
-    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
   }
+
   use 'JoosepAlviste/nvim-ts-context-commentstring' -- comment for ts files
-  
+
   -- Git
   use "lewis6991/gitsigns.nvim"
   use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
-  
+
   -- others
   use 'norcalli/nvim-colorizer.lua' -- css colorized hash
   use 'kyazdani42/nvim-web-devicons' -- add file icons

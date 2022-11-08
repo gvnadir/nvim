@@ -6,7 +6,7 @@ local custom_theme = require 'lualine.themes.16color'
 lualine.setup {
   options = {
     icons_enabled = true,
-     theme = custom_theme,
+    theme = custom_theme,
      -- theme = 'solarized_dark',
     component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' },
