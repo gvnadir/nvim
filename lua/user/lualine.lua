@@ -6,8 +6,8 @@ local custom_theme = require 'lualine.themes.16color'
 lualine.setup {
   options = {
     icons_enabled = true,
-    -- theme = custom_theme,
-    theme = '16color',
+    theme = custom_theme,
+    -- theme = '16color',
     component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' },
     disabled_filetypes = {
@@ -26,7 +26,7 @@ lualine.setup {
   sections = {
     lualine_a = { {
       'mode',
-      --[[ color = { fg = 'white', bg = 'black' } ]]
+       color = { fg = 'white', bg = 'black' }
     } },
     lualine_b = { { 'branch', '', 'diagnostics',
       color = { fg = 'white', bg = 'black' }
@@ -34,12 +34,10 @@ lualine.setup {
     lualine_c = { 'filename' },
     lualine_x = { 'encoding', 'fileformat', 'filetype' },
     lualine_y = { { 'progress',
-
-      --[[ color = { fg = 'white', bg = 'black' } ]]
+       color = { fg = 'white', bg = 'black' }
     } },
     lualine_z = { { 'location',
-
-      --[[ color = { fg = 'white', bg = 'black' } ]]
+       color = { fg = 'white', bg = 'black' }
     } }
   },
   inactive_sections = {
