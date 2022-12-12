@@ -88,7 +88,13 @@ return packer.startup(function(use)
 
   -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use({
+    "jose-elias-alvarez/null-ls.nvim",
+    config = function()
+        require("null-ls").setup()
+    end,
+    requires = { "nvim-lua/plenary.nvim" },
+  })
   use { "williamboman/mason.nvim" }
   use "williamboman/mason-lspconfig.nvim"
   use { "ray-x/lsp_signature.nvim" }
