@@ -1,13 +1,13 @@
 local status, lualine = pcall(require, "lualine")
 if (not status) then return end
 
-local custom_theme = require 'lualine.themes.16color'
+-- local custom_theme = require 'lualine.themes.16color'
 
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = custom_theme,
-    --theme = 'gruvbox_dark',
+    -- theme = custom_theme,
+    theme = 'solarized_dark',
     component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' },
     disabled_filetypes = {
@@ -26,18 +26,18 @@ lualine.setup {
   sections = {
     lualine_a = { {
       'mode',
-       color = { fg = 'white', bg = 'black' }
+       -- color = { fg = 'white', bg = 'black' }
     } },
     lualine_b = { { 'branch', '', 'diagnostics',
-      color = { fg = 'white', bg = 'black' }
+      -- color = { fg = 'white', bg = 'black' }
     } },
     lualine_c = { 'filename' },
     lualine_x = { 'encoding', 'fileformat', 'filetype' },
     lualine_y = { { 'progress',
-       color = { fg = 'white', bg = 'black' }
+       -- color = { fg = 'white', bg = 'black' }
     } },
     lualine_z = { { 'location',
-       color = { fg = 'white', bg = 'black' }
+       -- color = { fg = 'white', bg = 'black' }
     } }
   },
   inactive_sections = {
