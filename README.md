@@ -47,6 +47,48 @@ https://github.com/nvm-sh/nvm
 nvm install node
 ```
 
+## Copy/Paste support
+
+You'll probably notice you don't have support for copy/paste also that python and node haven't been setup
+
+So let's fix that
+
+First we'll fix copy/paste
+
+- On mac `pbcopy` should be builtin
+
+- On Ubuntu
+
+  ```
+  sudo apt install xsel
+  ```
+
+- On Arch Linux
+
+  ```
+  sudo pacman -S xsel
+  ```
+  
+- Wayland users
+
+  [wl-clipboard](https://github.com/bugaevc/wl-clipboard)
+
+
+Next we need to install python support (node is optional)
+
+- Neovim python support
+
+  ```
+  pip install pynvim
+  ```
+
+- Neovim node support
+
+  ```
+  npm i -g neovim
+  ```
+---
+
 ## Install a Nerd Font
 
 https://www.nerdfonts.com/font-downloads
