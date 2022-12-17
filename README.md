@@ -87,7 +87,6 @@ Next we need to install python support (node is optional)
   ```
   npm i -g neovim
   ```
----
 
 ## Install a Nerd Font
 
