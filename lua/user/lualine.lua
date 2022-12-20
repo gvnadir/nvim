@@ -7,7 +7,7 @@ lualine.setup {
   options = {
     icons_enabled = true,
     -- theme = custom_theme,
-    theme = 'ayu_dark',
+    theme = 'gruvbox_dark',
     component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' },
     disabled_filetypes = {
