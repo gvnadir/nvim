@@ -20,7 +20,7 @@ require "user.neosolarized"
 
 vim.o.background = "dark"
 -- vim.cmd([[colorscheme pop-punk]])
--- vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[colorscheme darkplus]])
 
 local has = function(x)
   return vim.fn.has(x) == 1
