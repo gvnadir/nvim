@@ -44,7 +44,7 @@ This will help you check the missing packages.
 https://github.com/nvm-sh/nvm
 
 ```
-nvm install node
+nvm install --lts
 ```
 
 ## Install fd-find and ripgrep to make grep work
