@@ -47,6 +47,20 @@ https://github.com/nvm-sh/nvm
 nvm install node
 ```
 
+## Install fd-find and ripgrep to make grep work
+
+```
+sudo apt install fd-grep
+sudo apt install ripgrep
+```
+
+[fd-grep](https://github.com/sharkdp/fd#installation)  
+[ripgrep](https://github.com/BurntSushi/ripgrep#installation)
+
+## Install prettier
+
+`npm install --global prettier`
+
 ## Copy/Paste support
 
 You'll probably notice you don't have support for copy/paste also that python and node haven't been setup
