@@ -19,8 +19,9 @@ require "user.neosolarized"
 -- require "user.indent-blankline"
 
 vim.o.background = "dark"
+vim.cmd([[syntax enable]])
 -- vim.cmd([[colorscheme pop-punk]])
-vim.cmd([[colorscheme moonfly]])
+vim.cmd([[colorscheme dosbox-black]])
 
 local has = function(x)
   return vim.fn.has(x) == 1

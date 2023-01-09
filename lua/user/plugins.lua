@@ -73,6 +73,8 @@ return packer.startup(function(use)
   use 'ldelossa/vimdark'
   use 't184256/vim-boring'
   use 'bignimbus/pop-punk.vim'
+  use 'aktersnurra/no-clown-fiesta.nvim'
+  use 'doki-theme/doki-theme-vim'
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
