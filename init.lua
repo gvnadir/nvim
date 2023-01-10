@@ -21,7 +21,7 @@ require "user.neosolarized"
 vim.o.background = "dark"
 vim.cmd([[syntax enable]])
 -- vim.cmd([[colorscheme pop-punk]])
-vim.cmd([[colorscheme dosbox-black]])
+vim.cmd([[colorscheme neosolarized]])
 
 local has = function(x)
   return vim.fn.has(x) == 1
