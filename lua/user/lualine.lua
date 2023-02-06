@@ -6,7 +6,10 @@ lualine.setup {
   options = {
     icons_enabled = true,
     -- theme = custom_theme,
-    theme = 'ayu_dark',
+    -- theme = 'ayu_dark',
+    -- theme = '16color',
+    -- theme = 'molokai',
+    theme = 'powerline_dark',
     section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
     disabled_filetypes = {}
