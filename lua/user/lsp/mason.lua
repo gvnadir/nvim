@@ -13,7 +13,8 @@ local servers = {
   "html",
   "tsserver",
   "cssls",
-  "sumneko_lua"
+  "sumneko_lua",
+  "pyright"
 }
 
 local settings = {
