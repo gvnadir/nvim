@@ -101,7 +101,15 @@ return packer.startup(function(use)
   use { "ray-x/lsp_signature.nvim" }
 
   -- Telescope
-  use "nvim-telescope/telescope.nvim"
+  use {
+    "nvim-telescope/telescope.nvim",
+    requires = {
+      { "nvim-telescope/telescope-live-grep-args.nvim" },
+    },
+    config = function()
+      require("telescope").load_extension("live_grep_args")
+    end
+  }
   use 'nvim-telescope/telescope-media-files.nvim'
   use { "nvim-telescope/telescope-file-browser.nvim" }
 

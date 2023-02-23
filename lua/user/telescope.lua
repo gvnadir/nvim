@@ -8,6 +8,7 @@ telescope.load_extension('file_browser')
 
 local actions = require "telescope.actions"
 local fb_actions = require "telescope".extensions.file_browser.actions
+local lga_actions = require("telescope-live-grep-args.actions")
 
 local function telescope_buffer_dir()
   return vim.fn.expand('%:p:h')
@@ -91,28 +92,38 @@ telescope.setup {
     -- builtin picker
   },
   extensions = {
-    media_files = {
-        -- filetypes whitelist
-        -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
-        filetypes = {"png", "webp", "jpg", "jpeg"},
-        find_cmd = "rg" -- find command (defaults to `fd`)
-      },
-      file_browser = {
-        theme = "dropdown",
-        -- disables netrw and use telescope-file-browser in its place
-        hijack_netrw = true,
-        mappings = {
-          ["i"] = {
-            -- your custom insert mode mappings
-          },
-          ["n"] = {
-            ["c"] = fb_actions.create,
-            ["r"] = fb_actions.rename,
-            ["d"] = fb_actions.remove,
-            -- your custom normal mode mappings
-          },
+    live_grep_args = {
+      auto_quoting = true, -- enable/disable auto-quoting
+      -- define mappings, e.g.
+      mappings = { -- extend mappings
+        i = {
+          ["<C-k>"] = lga_actions.quote_prompt(),
+          ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
         },
       },
+    },
+    media_files = {
+      -- filetypes whitelist
+      -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
+      filetypes = { "png", "webp", "jpg", "jpeg" },
+      find_cmd = "rg" -- find command (defaults to `fd`)
+    },
+    file_browser = {
+      theme = "dropdown",
+      -- disables netrw and use telescope-file-browser in its place
+      hijack_netrw = true,
+      mappings = {
+        ["i"] = {
+          -- your custom insert mode mappings
+        },
+        ["n"] = {
+          ["c"] = fb_actions.create,
+          ["r"] = fb_actions.rename,
+          ["d"] = fb_actions.remove,
+          -- your custom normal mode mappings
+        },
+      },
+    },
     -- Your extension configuration goes here:
     -- extension_name = {
     --   extension_config_key = value,
