@@ -19,7 +19,6 @@ require "user.colorizer"
 -- require "user.indent-blankline"
 
 vim.o.background = "dark"
-vim.cmd([[syntax enable]])
 vim.cmd([[colorscheme pop-punk]])
 -- vim.cmd([[colorscheme neosolarized]])
 
