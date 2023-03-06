@@ -76,7 +76,7 @@ keymap("n", "<leader>ss", ":vsplit<cr>", opts)
 keymap("n", "<leader>sh", ":split<cr>", opts)
 
 -- Nvimtree
---[[ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts) ]]
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 --
 -- Fix
 keymap("n", "<ESC>", ":noh<cr>", opts)
