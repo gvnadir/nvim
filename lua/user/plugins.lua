@@ -16,12 +16,12 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]]
+-- vim.cmd [[
+--   augroup packer_user_config
+--     autocmd!
+--     autocmd BufWritePost plugins.lua source <afile> | PackerSync
+--   augroup end
+-- ]]
 
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
@@ -74,6 +74,7 @@ return packer.startup(function(use)
   use 't184256/vim-boring'
   use 'bignimbus/pop-punk.vim'
   use 'aktersnurra/no-clown-fiesta.nvim'
+  use 'Mofiqul/dracula.nvim'
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -137,13 +138,16 @@ return packer.startup(function(use)
   use 'norcalli/nvim-colorizer.lua' -- css colorized hash
   use 'kyazdani42/nvim-web-devicons' -- add file icons
   -- use "lukas-reineke/indent-blankline.nvim" -- indent guides
-  --[[ use { ]]
-  --[[   "startup-nvim/startup.nvim", ]]
-  --[[   requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"}, ]]
-  --[[   config = function() ]]
-  --[[     require"startup".setup() ]]
-  --[[   end ]]
-  --[[ } ]]
+  
+  use {
+    'glepnir/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup() 
+    end,
+    requires = {'nvim-tree/nvim-web-devicons'}
+  }
+
   use 'xiyaowong/nvim-transparent'
 
   -- Automatically set up your configuration after cloning packer.nvim
