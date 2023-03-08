@@ -74,7 +74,6 @@ keymap("n", "<leader>do", ":DiffviewOpen<cr>", opts)
 keymap("n", "<leader>dc", ":DiffviewClose<cr>", opts)
 keymap("n", "<leader>ss", ":vsplit<cr>", opts)
 keymap("n", "<leader>sh", ":split<cr>", opts)
-keymap("n", "<leader>F", ":NeoZoomToggle<cr>", opts)
 
 -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)

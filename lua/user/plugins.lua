@@ -189,8 +189,8 @@ return packer.startup(function(use)
         --   exclude_filetypes = {},
         --   exclude_buftypes = {},
         -- },
+        vim.keymap.set('n', '<CR>', function () vim.cmd('NeoZoomToggle') end, { silent = true, nowait = true })
       }
-      --[[ vim.keymap.set('n', '<CR>', function () vim.cmd('NeoZoomToggle') end, { silent = true, nowait = true }) ]]
     end
   }
 
