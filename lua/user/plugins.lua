@@ -139,14 +139,7 @@ return packer.startup(function(use)
   use 'kyazdani42/nvim-web-devicons' -- add file icons
   -- use "lukas-reineke/indent-blankline.nvim" -- indent guides
   
-  use {
-    'glepnir/dashboard-nvim',
-    event = 'VimEnter',
-    config = function()
-      require('dashboard').setup() 
-    end,
-    requires = {'nvim-tree/nvim-web-devicons'}
-  }
+  use 'glepnir/dashboard-nvim'
 
   use 'xiyaowong/nvim-transparent'
 
