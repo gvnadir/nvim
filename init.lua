@@ -15,7 +15,6 @@ require "user.lualine"
 require "user.toggleterm"
 require "user.colorizer"
 require "user.nvim-transparent"
-require "user.neo-zoom"
 -- require "user.neosolarized"
 -- require "user.indent-blankline"
 
