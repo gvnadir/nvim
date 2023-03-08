@@ -137,13 +137,13 @@ return packer.startup(function(use)
   use 'norcalli/nvim-colorizer.lua' -- css colorized hash
   use 'kyazdani42/nvim-web-devicons' -- add file icons
   -- use "lukas-reineke/indent-blankline.nvim" -- indent guides
-  use {
-    "startup-nvim/startup.nvim",
-    requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"},
-    config = function()
-      require"startup".setup()
-    end
-  }
+  --[[ use { ]]
+  --[[   "startup-nvim/startup.nvim", ]]
+  --[[   requires = {"nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim"}, ]]
+  --[[   config = function() ]]
+  --[[     require"startup".setup() ]]
+  --[[   end ]]
+  --[[ } ]]
   use 'xiyaowong/nvim-transparent'
 
   -- Automatically set up your configuration after cloning packer.nvim

@@ -10,8 +10,9 @@ lualine.setup {
     -- theme = 'molokai',
     -- theme = 'powerline_dark',
     -- theme = 'solarized_dark',
-    theme = 'gruvbox_dark',
+    -- theme = 'gruvbox_dark',
     -- theme = 'wombat',
+    theme = 'auto',
     section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
     disabled_filetypes = {}
