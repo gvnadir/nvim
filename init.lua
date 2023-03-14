@@ -15,14 +15,14 @@ require "user.lualine"
 require "user.toggleterm"
 require "user.colorizer"
 require "user.nvim-transparent"
--- require "user.neosolarized"
+require "user.neosolarized"
 -- require "user.indent-blankline"
 
 -- vim.o.background = "dark"
 -- vim.cmd([[colorscheme pop-punk]])
 -- vim.cmd([[colorscheme gruvbox]])
 -- vim.cmd([[colorscheme darkplus]])
-vim.cmd([[colorscheme dracula]])
+-- vim.cmd([[colorscheme dracula]])
 
 local has = function(x)
   return vim.fn.has(x) == 1
