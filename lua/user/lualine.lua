@@ -1,18 +1,18 @@
 local status, lualine = pcall(require, "lualine")
 if (not status) then return end
 
-local custom_theme = require 'lualine.themes.16color'
+local custom_theme = require 'lualine.themes.papercolor_dark'
 lualine.setup {
   options = {
     icons_enabled = true,
-    -- theme = custom_theme,
+    theme = custom_theme,
     -- theme = 'ayu_dark',
     -- theme = 'molokai',
     -- theme = 'powerline_dark',
     -- theme = 'solarized_dark',
     -- theme = 'gruvbox_dark',
     -- theme = 'wombat',
-    theme = 'papercolor_dark',
+    -- theme = 'papercolor_dark',
     -- theme = 'auto',
     section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
@@ -20,10 +20,10 @@ lualine.setup {
   },
   sections = {
     lualine_a = {{ 'mode',
-      -- color = { fg = 'white', bg = 'black' }
+      color = { fg = 'black', bg = '#5f8787' }
     }},
     lualine_b = {{ 'branch',
-      -- color = { fg = 'white', bg = 'black' }
+      color = { fg = 'black', bg = '#5f8787' }
     }},
     lualine_c = { {
       'filename',
@@ -37,10 +37,10 @@ lualine.setup {
       'filetype'
     },
     lualine_y = {{ 'progress',
-     -- color = { fg = 'white', bg = 'black' }
+      color = { fg = 'black', bg = '#5f8787' }
     }},
-    lualine_z = {{ 'location',
-      -- color = { fg = 'white', bg = 'black' }
+      lualine_z = {{ 'location',
+       color = { fg = 'black', bg = '#5f8787' }
     }}
   },
   inactive_sections = {
