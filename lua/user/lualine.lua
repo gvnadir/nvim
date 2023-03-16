@@ -4,7 +4,7 @@ if (not status) then return end
 local custom_theme = require 'lualine.themes.papercolor_dark'
 lualine.setup {
   options = {
-    icons_enabled = true,
+    icons_enabled = false,
     theme = custom_theme,
     -- theme = 'ayu_dark',
     -- theme = 'molokai',
