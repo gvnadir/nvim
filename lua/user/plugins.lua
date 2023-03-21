@@ -144,7 +144,8 @@ return packer.startup(function(use)
 
   use 'xiyaowong/nvim-transparent'
 
-  use 'nyngwang/NeoZoom.lua'
+  -- zoom using <c-w>m
+  use 'dhruvasagar/vim-zoom'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
