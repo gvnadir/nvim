@@ -7,7 +7,7 @@
 Make sure to remove or move your current `nvim` directory
 
 ```
-git clone https://github.com/gianlucanadir/nvim.git ~/.config/nvim
+git clone https://github.com/gvnadir/nvim.git ~/.config/nvim
 ```
 
 Run `nvim` and wait for the plugins to be installed. (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim) 
