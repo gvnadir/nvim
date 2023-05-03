@@ -21,8 +21,8 @@ vim.o.background = "dark"
 -- vim.cmd([[colorscheme pop-punk]])
 -- vim.cmd([[colorscheme gruvbox]])
 -- vim.cmd([[colorscheme darkplus]])
--- vim.cmd([[colorscheme PaperColor]])
-vim.cmd([[colorscheme moonfly]])
+vim.cmd([[colorscheme PaperColor]])
+-- vim.cmd([[colorscheme moonfly]])
 
 local has = function(x)
   return vim.fn.has(x) == 1

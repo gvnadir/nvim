@@ -16,7 +16,11 @@ end
 
 telescope.setup {
   defaults = {
-    layout_strategy = 'vertical',
+    layout_strategy = 'horizontal',
+    layout_config = { 
+      height = 0.9,
+      width = 0.9,
+    },
     mappings = {
       i = {
         ["<C-n>"] = actions.cycle_history_next,
