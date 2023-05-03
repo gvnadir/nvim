@@ -1,0 +1,9 @@
+live grep
+
+-s case-sensitive
+-w match-word
+---------------------
+find
+
+case-sensitive /\word 
+match-word  /\C\<word\>
