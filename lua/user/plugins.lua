@@ -126,11 +126,8 @@ return packer.startup(function(use)
   use 'norcalli/nvim-colorizer.lua' -- css colorized hash
   use 'kyazdani42/nvim-web-devicons' -- add file icons
   -- use "lukas-reineke/indent-blankline.nvim" -- indent guides
-  
   -- use 'glepnir/dashboard-nvim'
-  
-
-  use 'xiyaowong/nvim-transparent'
+  -- use 'xiyaowong/nvim-transparent'
 
   -- zoom using <c-w>m
   use 'dhruvasagar/vim-zoom'
