@@ -20,7 +20,7 @@ Assuming you [built from source](https://github.com/neovim/neovim/wiki/Building-
 ```
 git pull
 make distclean && make CMAKE_BUILD_TYPE=Release
-git checkout v0.8.0
+git checkout release-0.9
 sudo make install
 nvim -v
 ```
@@ -50,7 +50,6 @@ nvm install --lts
 ## Install fd-find and ripgrep to make grep work
 
 ```
-sudo apt install fd-grep
 sudo apt install ripgrep
 ```
 
@@ -60,33 +59,6 @@ sudo apt install ripgrep
 ## Install prettier
 
 `npm install --global prettier`
-
-## Copy/Paste support
-
-You'll probably notice you don't have support for copy/paste also that python and node haven't been setup
-
-So let's fix that
-
-First we'll fix copy/paste
-
-- On mac `pbcopy` should be builtin
-
-- On Ubuntu
-
-  ```
-  sudo apt install xsel
-  ```
-
-- On Arch Linux
-
-  ```
-  sudo pacman -S xsel
-  ```
-  
-- Wayland users
-
-  [wl-clipboard](https://github.com/bugaevc/wl-clipboard)
-
 
 Next we need to install python support (node is optional)
 
@@ -108,4 +80,4 @@ https://www.nerdfonts.com/font-downloads
 
 ## Sources
 
-https://github.com/LunarVim/Neovim-from-scratch  
+https://github.com/LunarVim/nvim-basic-ide
