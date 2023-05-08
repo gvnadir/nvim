@@ -75,6 +75,7 @@ return packer.startup(function(use)
   use 'bignimbus/pop-punk.vim'
   use 'aktersnurra/no-clown-fiesta.nvim'
   use 'Mofiqul/dracula.nvim'
+  use({ 'rose-pine/neovim', as = 'rose-pine' })
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin

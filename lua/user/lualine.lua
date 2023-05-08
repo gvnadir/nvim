@@ -5,7 +5,7 @@ local custom_theme = require 'lualine.themes.papercolor_dark'
 lualine.setup {
   options = {
     icons_enabled = false,
-    theme = custom_theme,
+    -- theme = custom_theme,
     -- theme = 'ayu_dark',
     -- theme = 'molokai',
     -- theme = 'powerline_dark',
@@ -13,17 +13,17 @@ lualine.setup {
     -- theme = 'gruvbox_dark',
     -- theme = 'wombat',
     -- theme = 'papercolor_dark',
-    -- theme = 'auto',
+    theme = 'auto',
     section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
     disabled_filetypes = {}
   },
   sections = {
     lualine_a = {{ 'mode',
-      color = { fg = 'black', bg = '#5f8787' }
+      --[[ color = { fg = 'black', bg = '#5f8787' } ]]
     }},
     lualine_b = {{ 'branch',
-      color = { fg = 'black', bg = '#5f8787' }
+      --[[ color = { fg = 'black', bg = '#5f8787' } ]]
     }},
     lualine_c = { {
       'filename',
@@ -37,10 +37,10 @@ lualine.setup {
       'filetype'
     },
     lualine_y = {{ 'progress',
-      color = { fg = 'black', bg = '#5f8787' }
+      --[[ color = { fg = 'black', bg = '#5f8787' } ]]
     }},
       lualine_z = {{ 'location',
-      color = { fg = 'black', bg = '#5f8787' }
+      --[[ color = { fg = 'black', bg = '#5f8787' } ]]
     }}
   },
   inactive_sections = {
