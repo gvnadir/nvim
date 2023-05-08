@@ -57,6 +57,17 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
+-- Append the line below to the current line with a space
+keymap("n", "J", "mzJ`z", opts)
+
+-- jump file without losing focus
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
+
+-- keep cursor to center when itering occurence
+keymap("n", "n", "nzzzv", opts)
+keymap("n", "N", "Nzzzv", opts)
+
 -- Terminal --
 -- Better terminal navigation
 keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
@@ -64,10 +75,11 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
--- keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+-- replace current word
+keymap("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], opts)
+
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files({previewer = false})<cr>", opts)
---[[ keymap("n", "<leader>g", "<cmd>lua require'telescope.builtin'.live_grep()<cr>", opts) ]]
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<C-f>", "<cmd>lua require'telescope.builtin'.git_files({previewer = false})<cr>", opts)
 keymap("n", "<leader>b", "<cmd>lua require'telescope.builtin'.buffers()<cr>", opts)
 keymap("n", "<leader>g", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", opts)
 keymap("n", "<leader>do", ":DiffviewOpen<cr>", opts)
@@ -76,7 +88,9 @@ keymap("n", "<leader>ss", ":vsplit<cr>", opts)
 keymap("n", "<leader>sh", ":split<cr>", opts)
 
 -- Nvimtree
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+--[[ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts) ]]
+--
+keymap("n", "<leader>e", ":Ex<cr>", opts)
 --
 -- Fix
 keymap("n", "<ESC>", ":noh<cr>", opts)

@@ -3,27 +3,19 @@ require "user.keymaps"
 require "user.plugins"
 require "user.colorscheme"
 require "user.cmp"
-require "user.lsp"
 require "user.telescope"
 require "user.treesitter"
 require "user.autopairs"
 require "user.comment"
 require "user.gitsigns"
-require "user.nvim-tree"
+-- require "user.nvim-tree" ]]
 require "user.bufferline"
 require "user.lualine"
 require "user.toggleterm"
-require "user.colorizer"
-require "user.nvim-transparent"
+-- require "user.nvim-transparent" ]]
 require "user.rose-pine"
 -- require "user.neosolarized"
--- require "user.indent-blankline"
 vim.o.background = "dark"
--- vim.cmd([[colorscheme pop-punk]])
--- vim.cmd([[colorscheme gruvbox]])
--- vim.cmd([[colorscheme darkplus]])
--- vim.cmd([[colorscheme PaperColor]])
--- vim.cmd([[colorscheme moonfly]])
 vim.cmd('colorscheme rose-pine')
 
 local has = function(x)

@@ -15,14 +15,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.cmd [[packadd packer.nvim]]
 end
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
- vim.cmd [[
-   augroup packer_user_config
-     autocmd!
-     autocmd BufWritePost plugins.lua source <afile> | PackerSync
-   augroup end
- ]]
-
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
@@ -56,25 +48,10 @@ return packer.startup(function(use)
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
-  use 'rockerBOO/boo-colorscheme-nvim'
   use 'bluz71/vim-moonfly-colors'
-  use 'shatur/neovim-ayu'
-  use 'rafi/awesome-vim-colorschemes'
-  use {
-    'svrana/neosolarized.nvim',
-    requires = { 'tjdevries/colorbuddy.nvim' }
-  }
   use { "ellisonleao/gruvbox.nvim" }
-  use 'neg-serg/neg.nvim'
-  use 'bratpeki/truedark-vim'
   use 'NLKNguyen/papercolor-theme'
-  use 'fcpg/vim-farout'
-  use 'Evalir/dosbox-vim-colorscheme'
-  use 'ldelossa/vimdark'
-  use 't184256/vim-boring'
   use 'bignimbus/pop-punk.vim'
-  use 'aktersnurra/no-clown-fiesta.nvim'
-  use 'Mofiqul/dracula.nvim'
   use({ 'rose-pine/neovim', as = 'rose-pine' })
 
   -- cmp plugins
@@ -90,17 +67,26 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use({
-    "jose-elias-alvarez/null-ls.nvim",
-    config = function()
-        require("null-ls").setup()
-    end,
-    requires = { "nvim-lua/plenary.nvim" },
-  })
-  use { "williamboman/mason.nvim" }
-  use "williamboman/mason-lspconfig.nvim"
-  use { "ray-x/lsp_signature.nvim" }
+  use {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v2.x',
+    requires = {
+      -- LSP Support
+      {'neovim/nvim-lspconfig'},             -- Required
+      {                                      -- Optional
+      'williamboman/mason.nvim',
+      run = function()
+        pcall(vim.cmd, 'MasonUpdate')
+      end,
+    },
+    {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+    -- Autocompletion
+    {'hrsh7th/nvim-cmp'},     -- Required
+    {'hrsh7th/cmp-nvim-lsp'}, -- Required
+    {'L3MON4D3/LuaSnip'},     -- Required
+    }
+  }
 
   -- Telescope
   use {
