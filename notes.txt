@@ -18,3 +18,7 @@ Explorer
 
 % to create a file
 d to create a folder
+----------------------
+zoom pane
+
+<C-w>m
