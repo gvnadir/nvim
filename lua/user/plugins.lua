@@ -42,8 +42,8 @@ return packer.startup(function(use)
   use "akinsho/toggleterm.nvim"
 
   -- Bufferline
-  use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
+  -- use "akinsho/bufferline.nvim"
+  -- use "moll/vim-bbye"
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
@@ -125,6 +125,17 @@ return packer.startup(function(use)
   -- others
   use 'norcalli/nvim-colorizer.lua' -- css colorized hash
   use 'kyazdani42/nvim-web-devicons' -- add file icons
+  use {
+    "folke/zen-mode.nvim",
+    config = function()
+      require("zen-mode").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
+
   -- use "lukas-reineke/indent-blankline.nvim" -- indent guides
   -- use 'glepnir/dashboard-nvim'
   -- use 'xiyaowong/nvim-transparent'

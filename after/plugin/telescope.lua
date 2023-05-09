@@ -17,7 +17,7 @@ end
 telescope.setup {
   defaults = {
     layout_strategy = 'horizontal',
-    layout_config = { 
+    layout_config = {
       height = 0.9,
       width = 0.9,
     },
@@ -87,9 +87,9 @@ telescope.setup {
     },
   },
   pickers = {
-    find_files = {
-      disable_devicons = true
-    }
+    -- find_files = {
+    --    disable_devicons = true
+    -- }
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
     --   picker_config_key = value,
@@ -138,15 +138,3 @@ telescope.setup {
     -- please take a look at the readme of the extension you want to configure
   },
 }
-
---[[ vim.keymap.set("n", "<space>e", function() ]]
---[[   telescope.extensions.file_browser.file_browser({ ]]
---[[     path = "%:p:h", ]]
---[[     cwd = telescope_buffer_dir(), ]]
---[[     respect_gitignore = false, ]]
---[[     hidden = true, ]]
---[[     grouped = true, ]]
---[[     previewer = false, ]]
---[[     initial_mode = "normal", ]]
---[[   }) ]]
---[[ end) ]]

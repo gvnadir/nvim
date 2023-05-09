@@ -27,7 +27,7 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
 -- Navigate buffers
 vim.keymap.set("n", "<S-l>", ":bnext<CR>")
 vim.keymap.set("n", "<S-h>", ":bprevious<CR>")
-vim.keymap.set("n", "<leader>x", ":Bdelete<CR>")
+-- vim.keymap.set("n", "<leader>x", ":Bdelete<CR>")
 
 -- Move text up and down
 vim.keymap.set("n", "<A-j>", "<Esc>:m .+1<CR>==gi")
@@ -70,12 +70,17 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 vim.keymap.set("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files({previewer = false})<cr>")
 vim.keymap.set("n", "<C-f>", "<cmd>lua require'telescope.builtin'.git_files({previewer = false})<cr>")
-vim.keymap.set("n", "<leader>b", "<cmd>lua require'telescope.builtin'.buffers()<cr>")
+-- vim.keymap.set("n", "<leader>b", "<cmd>lua require'telescope.builtin'.buffers()<cr>")
+vim.keymap.set("n", "<leader>b", ":buffer<space>")
+vim.keymap.set("n", "<leader>x", ":bdelete<cr>")
 vim.keymap.set("n", "<leader>g", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>")
 vim.keymap.set("n", "<leader>do", ":DiffviewOpen<cr>")
 vim.keymap.set("n", "<leader>dc", ":DiffviewClose<cr>")
 vim.keymap.set("n", "<leader>ss", ":vsplit<cr>")
 vim.keymap.set("n", "<leader>sh", ":split<cr>")
+
+-- toggle ZenMode
+vim.keymap.set("n", "<leader>z", ":ZenMode<cr>")
 
 -- Nvimtree
 --[[ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>") ]]
