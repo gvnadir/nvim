@@ -9,5 +9,12 @@ case-sensitive /\word
 match-word  /\C\<word\>
 
 replace
-
 :%s/old/new/gc: to change every occurence in the whole file with confirmation
+
+indent
+select code and type =
+----------------------
+Explorer
+
+% to create a file
+d to create a folder

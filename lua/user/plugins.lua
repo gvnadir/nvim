@@ -135,6 +135,8 @@ return packer.startup(function(use)
       }
     end
   }
+  use 'ThePrimeagen/harpoon'
+  use 'mbbill/undotree'
 
   -- use "lukas-reineke/indent-blankline.nvim" -- indent guides
   -- use 'glepnir/dashboard-nvim'
