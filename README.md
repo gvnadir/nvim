@@ -54,7 +54,9 @@ sudo apt install npm
 
 ## Install pip
 
-`sudo apt install python3-pip`
+```
+sudo apt install python3-pip
+```
 
 ## Install ripgrep to make grep work
 
