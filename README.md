@@ -39,21 +39,27 @@ This will help you check the missing packages.
 - use it in case of errors
 - make sure you have [node](https://nodejs.org/en/) installed
 
-## Install last version of nodejs with nvm
-
-https://github.com/nvm-sh/nvm
+## Install nodejs and npm
 
 ```
-nvm install --lts
+sudo apt update
+sudo apt install nodejs
+sudo apt install npm
 ```
 
-## Install fd-find and ripgrep to make grep work
+## Install pip
+
+```
+sudo apt update
+sudo apt install python3-pip
+```
+
+## Install ripgrep to make grep work
 
 ```
 sudo apt install ripgrep
 ```
 
-[fd-grep](https://github.com/sharkdp/fd#installation)  
 [ripgrep](https://github.com/BurntSushi/ripgrep#installation)
 
 ## Install prettier
