@@ -39,26 +39,24 @@ This will help you check the missing packages.
 - use it in case of errors
 - make sure you have [node](https://nodejs.org/en/) installed
 
-## Install nodejs and npm
+## Preparing to install dependencies
+
+`sudo apt update`
+
+## install nodejs and npm
 
 ```
-sudo apt update
 sudo apt install nodejs
 sudo apt install npm
 ```
 
 ## Install pip
 
-```
-sudo apt update
-sudo apt install python3-pip
-```
+`sudo apt install python3-pip`
 
 ## Install ripgrep to make grep work
 
-```
-sudo apt install ripgrep
-```
+`sudo apt install ripgrep`
 
 [ripgrep](https://github.com/BurntSushi/ripgrep#installation)
 
