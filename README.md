@@ -41,7 +41,9 @@ This will help you check the missing packages.
 
 ## Preparing to install dependencies
 
-`sudo apt update`
+```
+sudo apt update
+```
 
 ## install nodejs and npm
 
@@ -56,13 +58,17 @@ sudo apt install npm
 
 ## Install ripgrep to make grep work
 
-`sudo apt install ripgrep`
+```
+sudo apt install ripgrep
+```
 
 [ripgrep](https://github.com/BurntSushi/ripgrep#installation)
 
 ## Install prettier
 
-`npm install --global prettier`
+```
+npm install --global prettier
+```
 
 Next we need to install python support (node is optional)
 
