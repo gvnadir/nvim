@@ -18,8 +18,8 @@ telescope.setup {
   defaults = {
     layout_strategy = 'vertical',
     layout_config = {
-      height = 0.8,
-      width = 0.5,
+      height = 0.9,
+      width = 0.9,
     },
     mappings = {
       i = {
