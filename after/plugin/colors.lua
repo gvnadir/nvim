@@ -7,3 +7,11 @@ function ColorMyPencils(color)
 end
 
 ColorMyPencils()
+
+-- Gruvbox hard
+-- vim.cmd([[
+--   highlight Normal guibg=#1D2021 guifg=#FBF1C7
+--   highlight CursorLine guibg=#32302F
+--   highlight StatusLine guibg=#32302F guifg=#FBF1C7
+--   highlight VertSplit guifg=#282828 guibg=#282828
+-- ]])
