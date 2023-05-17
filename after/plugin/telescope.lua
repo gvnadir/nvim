@@ -100,6 +100,7 @@ telescope.setup {
   },
   extensions = {
     live_grep_args = {
+      disable_devicons = true,
       auto_quoting = true, -- enable/disable auto-quoting
       -- define mappings, e.g.
       mappings = { -- extend mappings
