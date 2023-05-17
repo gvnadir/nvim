@@ -87,8 +87,11 @@ vim.keymap.set("n", "<leader>u", ":UndotreeToggle<cr>")
 
 -- Nvimtree
 --[[ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>") ]]
---
+-- Explorer
 vim.keymap.set("n", "<leader>e", ":Ex<cr>")
---
--- Fix
+
+-- Git
+vim.keymap.set("n", "<leader>G", ":Git")
+
+-- Fix highlights
 vim.keymap.set("n", "<ESC>", ":noh<cr>")
