@@ -35,7 +35,7 @@ lsp.set_preferences({
 })
 
 vim.diagnostic.config({
-  virtual_text = false,
+  virtual_text = true,
 })
 
 -- (Optional) Configure lua language server for neovim
