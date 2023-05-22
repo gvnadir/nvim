@@ -86,7 +86,7 @@ vim.keymap.set("n", "<leader>z", ":ZenMode<cr>")
 vim.keymap.set("n", "<leader>u", ":UndotreeToggle<cr>")
 
 -- Nvimtree
---[[ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>") ]]
+vim.keymap.set("n", "<leader>E", ":NvimTreeToggle<cr>")
 -- Explorer
 vim.keymap.set("n", "<leader>e", ":Ex<cr>")
 
