@@ -138,10 +138,6 @@ return packer.startup(function(use)
   use 'ThePrimeagen/harpoon'
   use 'mbbill/undotree'
 
-  -- use "lukas-reineke/indent-blankline.nvim" -- indent guides
-  -- use 'glepnir/dashboard-nvim'
-  -- use 'xiyaowong/nvim-transparent'
-
   -- zoom using <c-w>m
   use 'dhruvasagar/vim-zoom'
 
