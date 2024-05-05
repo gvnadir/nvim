@@ -1,194 +1,95 @@
-# kickstart.nvim
+# Neovim Installation
 
-## Introduction
+**This repo is updated to work with Neovim 0.8.**
 
-A starting point for Neovim that is:
+## Try out this config
 
-* Small
-* Single-file
-* Completely Documented
-
-**NOT** a Neovim distribution, but instead a starting point for your configuration.
-
-## Installation
-
-### Install Neovim
-
-Kickstart.nvim targets *only* the latest
-['stable'](https://github.com/neovim/neovim/releases/tag/stable) and latest
-['nightly'](https://github.com/neovim/neovim/releases/tag/nightly) of Neovim.
-If you are experiencing issues, please make sure you have the latest versions.
-
-### Install External Dependencies
-
-> **NOTE** 
-> [Backup](#FAQ) your previous configuration (if any exists)
-
-External Requirements:
-- Basic utils: `git`, `make`, `unzip`, C Compiler (`gcc`)
-- [ripgrep](https://github.com/BurntSushi/ripgrep#installation)
-- Language Setup:
-  - If want to write Typescript, you need `npm`
-  - If want to write Golang, you will need `go`
-  - etc.
-
-> **NOTE**
-> See [Windows Installation](#Windows-Installation) to double check any additional Windows notes
-
-Neovim's configurations are located under the following paths, depending on your OS:
-
-| OS | PATH |
-| :- | :--- |
-| Linux, MacOS | `$XDG_CONFIG_HOME/nvim`, `~/.config/nvim` |
-| Windows (cmd)| `%userprofile%\AppData\Local\nvim\` |
-| Windows (powershell)| `$env:USERPROFILE\AppData\Local\nvim\` |
-
-Clone kickstart.nvim:
-
-<details><summary> Linux and Mac </summary>
-
-```sh
-git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
-```
-
-</details>
-
-<details><summary> Windows </summary>
-
-If you're using `cmd.exe`:
+Make sure to remove or move your current `nvim` directory
 
 ```
-git clone https://github.com/nvim-lua/kickstart.nvim.git %userprofile%\AppData\Local\nvim\ 
+git clone https://github.com/gvnadir/nvim.git ~/.config/nvim
 ```
 
-If you're using `powershell.exe`
+Run `nvim` and wait for the plugins to be installed. (You will notice treesitter pulling in a bunch of parsers the next time you open Neovim) 
 
+**NOTE** [Mason](https://github.com/williamboman/mason.nvim) is now used to install and manage LSP servers, DAP servers, linters, and formatters via the `:Mason` command.
+
+### Upgrade to latest release
+
+Assuming you [built from source](https://github.com/neovim/neovim/wiki/Building-Neovim#quick-start) (**the first 2 steps of the page are mandatory**), `cd` into the folder where you cloned `neovim` and run the following commands. 
 ```
-git clone https://github.com/nvim-lua/kickstart.nvim.git $env:USERPROFILE\AppData\Local\nvim\ 
-```
-
-</details>
-
-### Post Installation
-
-Start Neovim
-
-```sh
-nvim
-```
-
-That's it! Lazy will install all the plugins you have. Use `:Lazy` to view
-current plugin status.
-
-Read through the `init.lua` file in your configuration folder for more
-information about extending and exploring Neovim.
-
-### Getting Started
-
-See [Effective Neovim: Instant IDE](https://youtu.be/stqUbv-5u2s), covering the
-previous version. Note: The install via init.lua is outdated, please follow the
-install instructions in this file instead. An updated video is coming soon.
-
-### Recommended Steps
-
-[Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repo
-(so that you have your own copy that you can modify) and then installing you
-can install to your machine using the methods above.
-
-> **NOTE**  
-> Your fork's url will be something like this: `https://github.com/<your_github_username>/kickstart.nvim.git`
-
-#### Examples of adding popularly requested plugins
-
-<details>
-  <summary>Adding autopairs</summary>
-
-This will automatically install [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs) and enable it on startup. For more information, see documentation for [lazy.nvim](https://github.com/folke/lazy.nvim).
-
-In the file: `lua/custom/plugins/autopairs.lua`, add:
-
-```lua
--- File: lua/custom/plugins/autopairs.lua
-
-return {
-  "windwp/nvim-autopairs",
-  -- Optional dependency
-  dependencies = { 'hrsh7th/nvim-cmp' },
-  config = function()
-    require("nvim-autopairs").setup {}
-    -- If you want to automatically add `(` after selecting a function or method
-    local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-    local cmp = require('cmp')
-    cmp.event:on(
-      'confirm_done',
-      cmp_autopairs.on_confirm_done()
-    )
-  end,
-}
+git pull
+make distclean && make CMAKE_BUILD_TYPE=Release
+git checkout release-0.9
+sudo make install
+nvim -v
 ```
 
-</details>
-<details>
-  <summary>Adding a file tree plugin</summary>
+## Get healthy
 
-This will install the tree plugin and add the command `:Neotree` for you. You can explore the documentation at [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim) for more information.
+Open `nvim` and enter the following:
 
-In the file: `lua/custom/plugins/filetree.lua`, add:
-
-```lua
--- Unless you are still migrating, remove the deprecated commands from v1.x
-vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
-
-return {
-  "nvim-neo-tree/neo-tree.nvim",
-  version = "*",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-    "MunifTanjim/nui.nvim",
-  },
-  config = function ()
-    require('neo-tree').setup {}
-  end,
-}
+```
+:checkhealth
 ```
 
-</details>
+This will help you check the missing packages.
 
-### FAQ
+**NOTE** 
+- use it in case of errors
+- make sure you have [node](https://nodejs.org/en/) installed
 
-* What should I do if I already have a pre-existing neovim configuration?
-  * You should back it up, then delete all files associated with it.
-  * This includes your existing init.lua and the neovim files in `~/.local` which can be deleted with `rm -rf ~/.local/share/nvim/`
-* Can I keep my existing configuration in parallel to kickstart?
-  * Yes! You can use [NVIM_APPNAME](https://neovim.io/doc/user/starting.html#%24NVIM_APPNAME)`=nvim-NAME` to maintain multiple configurations. For example you can install the kickstart configuration in `~/.config/nvim-kickstart` and create an alias:
-    ```
-    alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'
-    ```
-    When you run Neovim using `nvim-kickstart` alias it will use the alternative config directory and the matching local directory `~/.local/share/nvim-kickstart`. You can apply this approach to any Neovim distribution that you would like to try out.
-* What if I want to "uninstall" this configuration:
-  * See [lazy.nvim uninstall](https://github.com/folke/lazy.nvim#-uninstalling) information
-* Why is the kickstart `init.lua` a single file? Wouldn't it make sense to split it into multiple files?
-  * The main purpose of kickstart is to serve as a teaching tool and a reference
-    configuration that someone can easily `git clone` as a basis for their own.
-    As you progress in learning Neovim and Lua, you might consider splitting `init.lua`
-    into smaller parts. A fork of kickstart that does this while maintaining the exact
-    same functionality is available here:
-    * [kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim)
-  * Discussions on this topic can be found here:
-    * [Restructure the configuration](https://github.com/nvim-lua/kickstart.nvim/issues/218)
-    * [Reorganize init.lua into a multi-file setup](https://github.com/nvim-lua/kickstart.nvim/pull/473)
+## Preparing to install dependencies
 
-### Windows Installation
-
-Installation may require installing build tools, and updating the run command for `telescope-fzf-native`
-
-See `telescope-fzf-native` documentation for [more details](https://github.com/nvim-telescope/telescope-fzf-native.nvim#installation)
-
-This requires:
-
-- Install CMake, and the Microsoft C++ Build Tools on Windows
-
-```lua
-{'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 ```
+sudo apt update
+```
+
+## install nodejs and npm
+
+```
+sudo apt install nodejs
+sudo apt install npm
+```
+
+## Install pip
+
+```
+sudo apt install python3-pip
+```
+
+## Install ripgrep to make grep work
+
+```
+sudo apt install ripgrep
+```
+
+[ripgrep](https://github.com/BurntSushi/ripgrep#installation)
+
+## Install prettier
+
+```
+npm install --global prettier
+```
+
+Next we need to install python support (node is optional)
+
+- Neovim python support
+
+  ```
+  pip install pynvim
+  ```
+
+- Neovim node support
+
+  ```
+  npm i -g neovim
+  ```
+
+## Install a Nerd Font
+
+https://www.nerdfonts.com/font-downloads
+
+## Sources
+
+https://github.com/LunarVim/nvim-basic-ide
