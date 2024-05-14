@@ -149,15 +149,6 @@ return { -- LSP Configuration & Plugins
         enabled = false,
       },
 
-      tailwindcss = {
-        -- exclude a filetype from the default_config
-        filetypes_exclude = { 'markdown' },
-        -- add additional filetypes to the default_config
-        filetypes_include = {},
-        -- to fully override the default_config, change the below
-        -- filetypes = {}
-      },
-
       lua_ls = {
         -- cmd = {...},
         -- filetypes { ...},
@@ -201,8 +192,7 @@ return { -- LSP Configuration & Plugins
       'stylua', -- Used to format lua code
       'eslint',
       'prettierd',
-      -- 'tailwindcss',
-      -- 'rust_analyzer',
+      'gopls',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
