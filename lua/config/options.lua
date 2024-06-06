@@ -16,11 +16,6 @@ vim.opt.mouse = 'a'
 -- Don't show the mode, since it's already in the status line
 -- vim.opt.showmode = false
 
--- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
-vim.opt.clipboard = 'unnamedplus'
-
 -- Enable break indent
 vim.opt.breakindent = true
 
@@ -74,3 +69,15 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.bo.softtabstop = 4
+
+-- Map <leader>y to "+y in normal mode
+vim.keymap.set('n', '<leader>y', '"+y', { noremap = true, silent = true })
+
+-- Map <leader>p to "+p in normal mode
+vim.keymap.set('n', '<leader>p', '"+p', { noremap = true, silent = true })
+
+-- Map <leader>y to "+y in visual mode
+vim.keymap.set('v', '<leader>y', '"+y', { noremap = true, silent = true })
+
+-- Map <leader>p to "+p in visual mode
+vim.keymap.set('v', '<leader>p', '"+p', { noremap = true, silent = true })
