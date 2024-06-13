@@ -25,7 +25,7 @@ return {
     vim.keymap.set('n', '<leader>3', function()
       harpoon:list():select(3)
     end, { desc = 'Go to harpoon item 3' })
-    vim.keymap.set('n', '<A-/>', function()
+    vim.keymap.set('n', '<leader>4', function()
       harpoon:list():select(4)
     end, { desc = 'Go to harpoon item 4' })
 
