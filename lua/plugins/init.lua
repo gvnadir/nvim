@@ -66,10 +66,10 @@ return {
   --     transparent_mode = false,
   --   },
   --   config = function(_, opts)
-  -- --     -- Load the colorscheme here
+  --     --     -- Load the colorscheme here
   --     vim.cmd.colorscheme 'gruvbox'
-  -- --
-  -- --     -- You can configure highlights by doing something like
+  --     --
+  --     --     -- You can configure highlights by doing something like
   --     vim.cmd.hi 'Comment gui=none'
   --   end,
   -- },
@@ -208,7 +208,7 @@ return {
   --     styles = {
   --       bold = true,
   --       italic = false,
-  --       transparency = false,
+  --       transparency = true,
   --     },
   --
   --     groups = {
