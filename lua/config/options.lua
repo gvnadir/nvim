@@ -81,3 +81,5 @@ vim.keymap.set('v', '<leader>y', '"+y', { noremap = true, silent = true })
 
 -- Map <leader>p to "+p in visual mode
 vim.keymap.set('v', '<leader>p', '"+p', { noremap = true, silent = true })
+
+vim.cmd 'colorscheme habamax'
