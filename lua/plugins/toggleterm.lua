@@ -6,13 +6,13 @@ return {
     term.setup()
 
     -- Toggle floating terminal and enter insert mode
-    vim.keymap.set('n', '<leader>tt', function()
-      term.toggle(1, 20, vim.fn.getcwd(), 'float')
-      vim.cmd 'startinsert'
-    end, { desc = 'Toggle floating terminal' })
+    -- vim.keymap.set('n', '<leader>tt', function()
+    --   term.toggle(1, 20, vim.fn.getcwd(), 'float')
+    --   vim.cmd 'startinsert'
+    -- end, { desc = 'Toggle floating terminal' })
 
     -- Toggle bottom terminal and enter insert mode
-    vim.keymap.set('n', '<leader>tb', function()
+    vim.keymap.set('n', '<leader>t', function()
       term.toggle(1, 20, vim.fn.getcwd(), 'horizontal')
       vim.cmd 'startinsert'
     end, { desc = 'Toggle bottom terminal' })

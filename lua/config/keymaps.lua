@@ -83,3 +83,6 @@ map('n', '<leader>q', '<cmd>qa<cr>', { desc = 'Quit All' })
 
 -- bufferline
 map('n', '<leader>x', '<cmd>:bdelete<cr>', { desc = 'Close buffer' })
+
+-- auto-session search
+map('n', '<leader>a', '<cmd>:Autosession search<cr>', { desc = 'Search session' })

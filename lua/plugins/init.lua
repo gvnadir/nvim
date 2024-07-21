@@ -4,39 +4,60 @@ return {
     'nvim-lua/plenary.nvim',
     name = 'plenary',
   },
-  {
-    '2nthony/vitesse.nvim',
-    dependencies = {
-      'tjdevries/colorbuddy.nvim',
-    },
-    opts = {
-      comment_italics = false,
-      transparent_background = true,
-      transparent_float_background = true, -- aka pum(popup menu) background
-      reverse_visual = false,
-      dim_nc = false,
-      cmp_cmdline_disable_search_highlight_group = false, -- disable search highlight group for cmp item
-      -- if `transparent_float_background` false, make telescope border color same as float background
-      telescope_border_follow_float_background = false,
-      -- similar to above, but for lspsaga
-      lspsaga_border_follow_float_background = false,
-      -- diagnostic virtual text background, like error lens
-      diagnostic_virtual_text_background = false,
-
-      -- override the `lua/vitesse/palette.lua`, go to file see fields
-      colors = {},
-      themes = {},
-    },
-    config = function(_, opts)
-      -- Load the colorscheme here
-      vim.cmd.colorscheme 'vitesse'
-    end,
-  },
+  -- {
+  --   'briones-gabriel/darcula-solid.nvim',
+  --   dependencies = {
+  --     'rktjmp/lush.nvim',
+  --   },
+  --   config = function(_, opts)
+  --     -- Load the colorscheme here
+  --     vim.cmd.colorscheme 'darcula-solid'
+  --   end,
+  -- },
+  -- {
+  --   '2nthony/vitesse.nvim',
+  --   dependencies = {
+  --     'tjdevries/colorbuddy.nvim',
+  --   },
+  --   opts = {
+  --     comment_italics = false,
+  --     transparent_background = true,
+  --     transparent_float_background = true, -- aka pum(popup menu) background
+  --     reverse_visual = false,
+  --     dim_nc = false,
+  --     cmp_cmdline_disable_search_highlight_group = false, -- disable search highlight group for cmp item
+  --     -- if `transparent_float_background` false, make telescope border color same as float background
+  --     telescope_border_follow_float_background = false,
+  --     -- similar to above, but for lspsaga
+  --     lspsaga_border_follow_float_background = false,
+  --     -- diagnostic virtual text background, like error lens
+  --     diagnostic_virtual_text_background = false,
+  --
+  --     -- override the `lua/vitesse/palette.lua`, go to file see fields
+  --     colors = {},
+  --     themes = {},
+  --   },
+  --   config = function(_, opts)
+  --     -- Load the colorscheme here
+  --     vim.cmd.colorscheme 'vitesse'
+  --   end,
+  -- },
   -- {
   --   'pappasam/papercolor-theme-slim',
   --   config = function(_, opts)
   --     -- Load the colorscheme here
   --     vim.cmd.colorscheme 'PaperColorSlim'
+  --   end,
+  -- },
+  -- {
+  --   'sainnhe/gruvbox-material',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     -- Optionally configure and load the colorscheme
+  --     -- directly inside the plugin declaration.
+  --     vim.g.gruvbox_material_enable_italic = false
+  --     vim.cmd.colorscheme 'gruvbox-material'
   --   end,
   -- },
   -- {
@@ -155,41 +176,56 @@ return {
   --     vim.cmd.hi 'Comment gui=none'
   --   end,
   -- },
-  -- {
-  --   'rebelot/kanagawa.nvim',
-  --   opts = {
-  --     compile = false, -- enable compiling the colorscheme
-  --     undercurl = true, -- enable undercurls
-  --     commentStyle = { italic = false },
-  --     functionStyle = {},
-  --     keywordStyle = { italic = false },
-  --     statementStyle = { bold = true },
-  --     typeStyle = {},
-  --     transparent = false, -- do not set background color
-  --     dimInactive = false, -- dim inactive window `:h hl-NormalNC`
-  --     terminalColors = true, -- define vim.g.terminal_color_{0,17}
-  --     colors = { -- add/modify theme and palette colors
-  --       palette = {},
-  --       theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
-  --     },
-  --     overrides = function(colors) -- add/modify highlights
-  --       return {}
-  --     end,
-  --     theme = 'wave', -- Load "wave" theme when 'background' option is not set
-  --     background = { -- map the value of 'background' option to a theme
-  --       dark = 'wave', -- try "dragon" !
-  --       light = 'lotus',
-  --     },
-  --   },
-  --   config = function(_, opts)
-  --     require('kanagawa').setup(opts)
-  --
-  --     -- Load the colorscheme here
-  --     vim.cmd.colorscheme 'kanagawa'
-  --     -- You can configure highlights by doing something like
-  --     vim.cmd.hi 'Comment gui=none'
-  --   end,
-  -- },
+  {
+    'rebelot/kanagawa.nvim',
+    opts = {
+      compile = false, -- enable compiling the colorscheme
+      undercurl = true, -- enable undercurls
+      commentStyle = { italic = false },
+      functionStyle = {},
+      keywordStyle = { italic = false },
+      statementStyle = { bold = true },
+      typeStyle = {},
+      transparent = true, -- do not set background color
+      dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+      terminalColors = true, -- define vim.g.terminal_color_{0,17}
+      colors = { -- add/modify theme and palette colors
+        palette = {},
+        theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+      },
+      overrides = function(colors) -- add/modify highlights
+        local theme = colors.theme
+        return {
+          NormalFloat = { bg = 'none' },
+          FloatBorder = { bg = 'none' },
+          FloatTitle = { bg = 'none' },
+
+          -- Save an hlgroup with dark background and dimmed foreground
+          -- so that you can use it where your still want darker windows.
+          -- E.g.: autocmd TermOpen * setlocal winhighlight=Normal:NormalDark
+          NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
+
+          -- Popular plugins that open floats will link to NormalFloat by default;
+          -- set their background accordingly if you wish to keep them dark and borderless
+          LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+          MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
+        }
+      end,
+      theme = 'dragon', -- Load "wave" theme when 'background' option is not set
+      background = { -- map the value of 'background' option to a theme
+        dark = 'dragon', -- try "dragon" !
+        light = 'lotus',
+      },
+    },
+    config = function(_, opts)
+      require('kanagawa').setup(opts)
+
+      -- Load the colorscheme here
+      vim.cmd.colorscheme 'kanagawa'
+      -- You can configure highlights by doing something like
+      vim.cmd.hi 'Comment gui=none'
+    end,
+  },
   -- {
   --   'rose-pine/neovim',
   --   name = 'rose-pine',

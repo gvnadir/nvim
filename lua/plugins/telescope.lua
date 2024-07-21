@@ -95,7 +95,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
       builtin.find_files { hidden = true }
     end, { desc = 'Find All Files (Including Hidden Ones)' })
     vim.keymap.set('n', '<leader><leader>', builtin.git_files, { desc = 'Search Git Files' })
-    vim.keymap.set('n', '<leader>fs', builtin.builtin, { desc = 'Search Select Telescope' })
+    -- vim.keymap.set('n', '<leader>fs', builtin.builtin, { desc = 'Search Select Telescope' })
     -- Searches for all the occurrences of the word under the cursor
     vim.keymap.set('n', '<leader>fw', builtin.grep_string, { desc = 'Search current Word' })
     vim.keymap.set('n', '<leader>fp', builtin.live_grep, { desc = 'Search by Grep' })
