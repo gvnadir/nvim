@@ -13,7 +13,7 @@ return {
 
     -- Toggle bottom terminal and enter insert mode
     vim.keymap.set('n', '<leader>t', function()
-      term.toggle(1, 20, vim.fn.getcwd(), 'horizontal')
+      term.toggle(1, 15, vim.fn.getcwd(), 'horizontal')
       vim.cmd 'startinsert'
     end, { desc = 'Toggle bottom terminal' })
 
